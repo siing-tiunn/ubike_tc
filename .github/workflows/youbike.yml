@@ -2,8 +2,8 @@ name: YouBike Pipeline
 
 on:
   schedule:
-    - cron: '*/20 * * * *'
-  workflow_dispatch:
+    - cron: '*/20 * * * *'  # 每20分鐘執行一次
+  workflow_dispatch:         # 也可以手動觸發
 
 jobs:
   run-pipeline:
@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install ODBC Driver 17 for SQL Server
+      - name: Install ODBC Driver 17 for SQL Server  # ← 新增這段
         run: |
           curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
           curl https://packages.microsoft.com/config/ubuntu/22.04/prod.list | sudo tee /etc/apt/sources.list.d/mssql-release.list
