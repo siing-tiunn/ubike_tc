@@ -42,6 +42,8 @@ jobs:
             --name github-actions-runner \
             --start-ip-address $RUNNER_IP \
             --end-ip-address $RUNNER_IP
+          echo "Waiting for firewall rule to propagate..."
+          sleep 10
 
       - name: Run YouBike pipeline
         run: python src/pipeline.py
