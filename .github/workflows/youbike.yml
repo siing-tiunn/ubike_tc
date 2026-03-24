@@ -2,8 +2,8 @@ name: YouBike Pipeline
 
 on:
   schedule:
-    - cron: '*/20 * * * *'  # 每20分鐘執行一次
-  workflow_dispatch:         # 也可以手動觸發
+    - cron: '*/20 * * * *'
+  workflow_dispatch:
 
 jobs:
   run-pipeline:
@@ -28,23 +28,6 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Add GitHub Actions IP to Azure SQL Firewall  # ← 新增
-        run: |
-          RUNNER_IP=$(curl -s https://api.ipify.org)
-          echo "Runner IP: $RUNNER_IP"
-          az login --service-principal \
-            -u ${{ secrets.AZURE_CLIENT_ID }} \
-            -p ${{ secrets.AZURE_CLIENT_SECRET }} \
-            --tenant ${{ secrets.AZURE_TENANT_ID }}
-          az sql server firewall-rule create \
-            --resource-group data_analystic \
-            --server siit \
-            --name github-actions-runner \
-            --start-ip-address $RUNNER_IP \
-            --end-ip-address $RUNNER_IP
-          echo "Waiting for firewall rule to propagate..."
-          sleep 10
-
       - name: Run YouBike pipeline
         run: python src/pipeline.py
         env:
@@ -52,11 +35,3 @@ jobs:
           DBUSER: ${{ secrets.DBUSER }}
           DBPWD: ${{ secrets.DBPWD }}
           DATABASE: ${{ secrets.DATABASE }}
-
-      - name: Remove GitHub Actions IP from Firewall  # ← 執行完移除
-        if: always()
-        run: |
-          az sql server firewall-rule delete \
-            --resource-group data_analystic \
-            --server siit \
-            --name github-actions-runner
