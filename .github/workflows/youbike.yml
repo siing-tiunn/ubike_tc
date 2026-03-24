@@ -2,7 +2,7 @@ name: YouBike Pipeline
 
 on:
   schedule:
-    - cron: '*/15 * * * *'  # 每15分鐘執行一次
+    - cron: '*/20 * * * *'  # 每20分鐘執行一次
   workflow_dispatch:         # 也可以手動觸發
 
 jobs:
