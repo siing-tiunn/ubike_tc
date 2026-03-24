@@ -1,0 +1,30 @@
+name: YouBike Pipeline
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'  # 每15分鐘執行一次
+  workflow_dispatch:         # 也可以手動觸發
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run YouBike pipeline
+        run: python src/youbike/pipeline_2.py
+        env:
+          DBSERVER: ${{ secrets.DBSERVER }}
+          DBUSER: ${{ secrets.DBUSER }}
+          DBPWD: ${{ secrets.DBPWD }}
+          DATABASE: ${{ secrets.DATABASE }}
