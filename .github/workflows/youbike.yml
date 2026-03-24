@@ -22,7 +22,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run YouBike pipeline
-        run: python src/youbike/pipeline_2.py
+        run: python src/pipeline.py
         env:
           DBSERVER: ${{ secrets.DBSERVER }}
           DBUSER: ${{ secrets.DBUSER }}
