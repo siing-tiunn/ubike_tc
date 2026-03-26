@@ -1,4 +1,5 @@
 import requests
+import urllib3
 import pandas as pd
 import json
 from datetime import datetime
@@ -44,10 +45,21 @@ url = "https://newdatacenter.taichung.gov.tw/api/v1/no-auth/resource.download?ri
 
 def fetch_data():
     print("=====extract=====")
-    response = requests.get(url)
-    if response.status_code != 200:
-        raise Exception(f"API request failed: {response.status_code}")
-    return response
+    urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+    # response = requests.get(url)
+    # response = requests.get(url, verify=False)
+    # if response.status_code != 200:
+    #     raise Exception(f"API request failed: {response.status_code}")
+    
+    try:
+        response = requests.get(url, verify=False, timeout=10)
+        response.raise_for_status()
+        return response
+    except Exception as e:
+        print(f"API error: {e}")
+        return None
+    
 
 
 # -----------------------------
@@ -114,14 +126,15 @@ def load_incremental(df, batch_time):
 # -----------------------------
 # 5️⃣ Pipeline
 # -----------------------------
-def run_pipeline():
+def run_pipeline(i):
     response = fetch_data()
     df, batch_time = transform(response)
     load_incremental(df, batch_time)
+    print(f"run_pipeline... (iteration {i})")
 
 
 # -----------------------------
 # 6️⃣ 執行
 # -----------------------------
 if __name__ == "__main__":
-    run_pipeline()
+    run_pipeline(0)
