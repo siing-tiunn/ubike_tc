@@ -19,8 +19,45 @@ https://www.moeaea.gov.tw/ecw/populace/content/Content.aspx?menu_id=1001
 ssh azureuser@20.70.142.18
 azureuser_siit@20.70.142.18
 
+
+天氣雨量
 https://history.colife.org.tw/#/?cd=%2F%E5%9C%B0%E9%9C%87%2F%E4%B8%AD%E5%A4%AE%E6%B0%A3%E8%B1%A1%E7%BD%B2_%E5%9C%B0%E7%A3%81%E8%A7%80%E6%B8%AC%E7%AB%99
 
+
+台灣電力公司近三年每日尖峰備轉容量率
+https://data.gov.tw/dataset/24945
+
+台灣電力公司歷年尖峰負載及備用容量率
+https://data.gov.tw/dataset/8307?page=1
+
+台灣電力公司年度備轉容量彙整
+https://data.gov.tw/dataset/122035
+
+
+台灣電力公司過去電力供需資訊
+https://data.gov.tw/dataset/19995
+
+台灣電力公司近5年系統概況
+https://data.gov.tw/dataset/103046
+
+經濟部：發電量—按燃料別分
+https://service.moea.gov.tw/EE521/common/Common.aspx?code=M&no=8
+
+
+園管局各產業園區範圍圖
+
+https://land.bip.gov.tw/content/files/public_files/%E7%AF%84%E5%9C%8D%E5%9C%96%E8%B3%87%E6%96%99%E9%9B%86.zip
+
+
+
+AI與先進製程需求帶動　三大科學園區2025年營收達5.8兆元
+https://www.eettaiwan.com/20260317nt11-ai-chips-advanced-nodes-boost-taiwan-science-parks-revenue/
+
+
+
+
+
+-------------------
 
 臺北市YouBike每月使用量(202011-202508
 https://data.gov.tw/dataset/135775
