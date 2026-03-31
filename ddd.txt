@@ -64,6 +64,15 @@ https://www.eettaiwan.com/20260317nt11-ai-chips-advanced-nodes-boost-taiwan-scie
 https://www.esist.org.tw/a0303/02/api/v1/ebs-107/?period=m&end_y=107&end_m=12&start_y=107&start_m=1&unit=0&selection1=s1000%2Cs2000%2Cs3000%2Cs3200%2Cs3100%2Cs4000%2Cs5110%2Cs5120%2Cs5130%2Cs5140%2Cs5150%2Cs5200&selection2=INDI_PROD%2CIMPORT%2CEXPORT%2CCOKE_OVEN%2CBLAST_FUR%2CPETRO_REF%2CPETRO_IND%2CPUB_ELEC%2CAUTO_ELEC%2CPUB_COGEN%2CAUTO_COGEN%2CENG_OWN%2CENG_COAL_MINES%2CENG_COKE_OVEN%2CENG_BLAST_FUR%2CENG_OG_EXTRACT%2CENG_PETRO_REF%2CENG_ELEC_PLANT%2CENG_ELEC_PUMP%2CENG_COGEN_PLANT%2CENG_GAS_COMP%2CINDU31%2CINDU3110
 https://www.esist.org.tw/a0303/02/database/search/ebs-107/
 
+
+能源指標
+https://www.esist.org.tw/a0303/02/api/v1/energy-index/?period=q&end_y=114&end_q=4&start_y=105&start_q=1&unit=0&selection1=eiq0106%2Ceiq0101%2Ceiq0102%2Ceiq0103%2Ceiq0104%2Ceiq0105%2Ceiq0201%2Ceiq0202%2Ceiq0401%2Ceiq0402%2Ceiq0403%2Ceiq0501%2Ceiq0502%2Ceiq0505%2Ceiq0601%2Ceiq0602%2Ceiq0604
+指標類型
+初級能源密集度、能源消費密集度、工業部門能源消費密集度、服務業部門能源消費密集度、電力密集度、能源生產力、國內能源消費彈性值、電力消費彈性值、平均每人能源消費量、平均每人用電量、平均每人負擔能源進口值、進口能源依存度、進口石油依存度、能源進口值占總進口值比例、能源供應種類集中度、進口原油來源集中度、發電能源種類集中度
+資料期間
+105年第1季~114年第4季，季資料，原始單位
+
+
 -------------------
 
 臺北市YouBike每月使用量(202011-202508
